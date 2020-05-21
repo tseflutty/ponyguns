@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/testChestTop.obj-9441feef08d04744ce8cbf5f710fe9fc.mesh"
+
+[deps]
+
+files=[ "res://.import/testChestTop.obj-9441feef08d04744ce8cbf5f710fe9fc.mesh" ]
+
+source_file="res://Tests/testChest/testChestTop.obj"
+dest_files=[ "res://.import/testChestTop.obj-9441feef08d04744ce8cbf5f710fe9fc.mesh", "res://.import/testChestTop.obj-9441feef08d04744ce8cbf5f710fe9fc.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

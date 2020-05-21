@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Tests/InventoryGUITests.cs" type="Script" id=1]
+[ext_resource path="res://GUI/Inventory/InventoryGUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Tests/testpon_left.png" type="Texture" id=3]
+[ext_resource path="res://Tests/testpon2_left.png" type="Texture" id=4]
+
+[node name="InventoryGUITests" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.873779
+margin_top = -0.680573
+margin_right = -0.873779
+margin_bottom = -0.680542
+script = ExtResource( 1 )
+
+[node name="InventoryGUI" parent="." instance=ExtResource( 2 )]
+visible = true
+margin_left = 346.415
+margin_top = 110.515
+margin_right = 846.415
+margin_bottom = 504.515
+MaxSlotsColumns = 1
+
+[node name="Button" type="Button" parent="."]
+margin_left = 36.0
+margin_top = 635.0
+margin_right = 187.0
+margin_bottom = 686.0
+text = "Add Test Item"
+
+[node name="testpon_left" type="Sprite" parent="."]
+visible = false
+position = Vector2( 796.655, 299.298 )
+texture = ExtResource( 3 )
+
+[node name="testpon2_left" type="Sprite" parent="."]
+visible = false
+position = Vector2( 683.813, 354.32 )
+texture = ExtResource( 4 )
+
+[connection signal="button_up" from="Button" to="." method="addItemButton_Click"]

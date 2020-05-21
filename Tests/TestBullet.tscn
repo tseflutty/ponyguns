@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Objects/Weapons/Bullets/Bullet.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Tests/TestBullet.png" type="Texture" id=2]
+
+[node name="Bullet" index="0" instance=ExtResource( 1 )]
+Damage = 5
+
+[node name="BulletTexture" parent="." index="0"]
+texture = ExtResource( 2 )
+
+[node name="AtackArea" parent="." index="1"]
+transform = Transform( 0.258695, 0, 0, 0, 0.162895, 0, 0, 0, 0.343422, 0.000131369, 0.0535271, 0.00353771 )
+

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Objects/VisualItem/ItemPlace.cs" type="Script" id=1]
+
+[node name="ItemPlace" type="Spatial"]
+script = ExtResource( 1 )
+

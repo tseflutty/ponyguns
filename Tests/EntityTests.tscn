@@ -1,0 +1,1411 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Scripts/Tests/EntityTests.cs" type="Script" id=1]
+[ext_resource path="res://Tests/TestingEntity.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Entity/Entity.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Entity/Pony/Unicorn.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/PonyCamera.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Tests/testSky2.png" type="Texture" id=6]
+[ext_resource path="res://Arenas/Arena.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/Entity/ShotUserControl.tscn" type="PackedScene" id=8]
+[ext_resource path="res://GUI/Inventory/InventoryGUI.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Objects/Entity/EntityUserControl.tscn" type="PackedScene" id=10]
+
+
+[sub_resource type="PhysicsMaterial" id=4]
+friction = 9.0
+
+[sub_resource type="CapsuleMesh" id=5]
+
+[sub_resource type="BoxShape" id=6]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.847059, 0.847059, 0.847059, 1 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 27.7934, 1, 28.0646 )
+
+[sub_resource type="PanoramaSky" id=7]
+panorama = ExtResource( 6 )
+
+[sub_resource type="Environment" id=8]
+background_mode = 3
+background_sky = SubResource( 7 )
+background_sky_orientation = Basis( 1, 0, 0, 0, -4.08, 0, 0, 0, 1 )
+background_color = Color( 0.817823, 0.882233, 0.949219, 1 )
+fog_depth_begin = 0.0
+fog_depth_end = 110.0
+dof_blur_far_distance = 30.0
+dof_blur_far_transition = 3.52
+dof_blur_far_amount = 0.08
+dof_blur_near_distance = 20.34
+
+[node name="EntityTests" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Scene" type="Spatial" parent="."]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="Scene"]
+transform = Transform( -0.243476, 0.888411, -0.38916, -0.275159, 0.32148, 0.906057, 0.930058, 0.327683, 0.166182, 0, 26.8143, 0 )
+light_energy = 1.2
+shadow_enabled = true
+
+[node name="Entity2__" parent="Scene" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 6, 1 )
+
+[node name="testRigid" type="RigidBody" parent="Scene"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.03003, -11.0809 )
+mass = 28.5745
+physics_material_override = SubResource( 4 )
+gravity_scale = 5.0
+
+[node name="MeshInstance" type="MeshInstance" parent="Scene/testRigid"]
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Scene/testRigid"]
+shape = SubResource( 6 )
+
+[node name="Floor" type="StaticBody" parent="Scene"]
+editor/display_folded = true
+
+[node name="MeshInstance" type="MeshInstance" parent="Scene/Floor"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Scene/Floor"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 24, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="Scene/Floor"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 24, 0, -17 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="Scene/Floor"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 0, 0, -17 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Scene/Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -11 )
+shape = SubResource( 3 )
+
+[node name="Floor2" type="StaticBody" parent="Scene"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Scene/Floor2"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Scene/Floor2"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 24, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="Scene/Floor2"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 24, 0, -17 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="Scene/Floor2"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 0, 0, -17 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Scene/Floor2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -11 )
+shape = SubResource( 3 )
+
+[node name="Floor3" type="StaticBody" parent="Scene"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41, 0, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Scene/Floor3"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Scene/Floor3"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 24, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="Scene/Floor3"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 24, 0, -17 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="Scene/Floor3"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 0, 0, -17 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Scene/Floor3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -11 )
+shape = SubResource( 3 )
+
+[node name="Floor4" type="StaticBody" parent="Scene"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41, 0, -36 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Scene/Floor4"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Scene/Floor4"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 24, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="Scene/Floor4"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 24, 0, -17 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="Scene/Floor4"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 0, 0, -17 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Scene/Floor4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -11 )
+shape = SubResource( 3 )
+
+[node name="Floor5" type="StaticBody" parent="Scene"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41, 0, 33 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Scene/Floor5"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Scene/Floor5"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 24, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="Scene/Floor5"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 24, 0, -17 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="Scene/Floor5"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 0, 0, -17 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Scene/Floor5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -11 )
+shape = SubResource( 3 )
+
+[node name="Floor6" type="StaticBody" parent="Scene"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 33 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Scene/Floor6"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Scene/Floor6"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 24, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="Scene/Floor6"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 24, 0, -17 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="Scene/Floor6"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 0, 0, -17 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Scene/Floor6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -11 )
+shape = SubResource( 3 )
+
+[node name="Floor7" type="StaticBody" parent="Scene"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 0, 33 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Scene/Floor7"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Scene/Floor7"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 24, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="Scene/Floor7"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 24, 0, -17 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="Scene/Floor7"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 0, 0, -17 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Scene/Floor7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -11 )
+shape = SubResource( 3 )
+
+[node name="Floor8" type="StaticBody" parent="Scene"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 0, -36 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Scene/Floor8"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Scene/Floor8"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 24, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="Scene/Floor8"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 24, 0, -17 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="Scene/Floor8"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 0, 0, -17 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Scene/Floor8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -11 )
+shape = SubResource( 3 )
+
+[node name="Floor9" type="StaticBody" parent="Scene"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -36 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Scene/Floor9"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Scene/Floor9"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 24, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="Scene/Floor9"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 24, 0, -17 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="Scene/Floor9"]
+transform = Transform( 12.1437, 0, 0, 0, 1, 0, 0, 0, 8.72763, 0, 0, -17 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Scene/Floor9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -11 )
+shape = SubResource( 3 )
+
+[node name="Entity" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.13234, 2.5928, 2.17175 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity25" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.8677, 2.5928, 2.17175 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity49" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.1323, 2.5928, 2.17175 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity77" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.1323, 2.5928, -33.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity96" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.1323, 2.5928, 35.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity122" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.86766, 2.5928, 35.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity135" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.8677, 2.5928, 35.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity162" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.8677, 2.5928, -33.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity192" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.867661, 2.5928, -33.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity2" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1323, 2.5928, 2.17175 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity27" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.8677, 2.5928, 2.17175 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity46" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 57.1323, 2.5928, 2.17175 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity72" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 57.1323, 2.5928, -33.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity94" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 57.1323, 2.5928, 35.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity111" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.13234, 2.5928, 35.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity148" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -38.8677, 2.5928, 35.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity167" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -38.8677, 2.5928, -33.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity195" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1323, 2.5928, -33.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity3" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1323, 2.5928, -3.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity24" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.8677, 2.5928, -3.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity66" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 57.1323, 2.5928, -3.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity88" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 57.1323, 2.5928, -39.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity99" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 57.1323, 2.5928, 29.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity125" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.13234, 2.5928, 29.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity136" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -38.8677, 2.5928, 29.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity170" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -38.8677, 2.5928, -39.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity185" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1323, 2.5928, -39.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity8" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.1323, 2.5928, -3.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity29" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8677, 2.5928, -3.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity58" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.1323, 2.5928, -3.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity81" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.1323, 2.5928, -39.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity107" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.1323, 2.5928, 29.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity129" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.1323, 2.5928, 29.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity153" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.8677, 2.5928, 29.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity161" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.8677, 2.5928, -39.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity180" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.1323, 2.5928, -39.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity13" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.13234, 2.5928, -3.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity34" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.8677, 2.5928, -3.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity61" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.1323, 2.5928, -3.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity84" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.1323, 2.5928, -39.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity108" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.1323, 2.5928, 29.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity130" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13234, 2.5928, 29.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity138" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.8677, 2.5928, 29.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity172" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.8677, 2.5928, -39.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity188" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13234, 2.5928, -39.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity20" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.1323, 2.5928, -3.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity44" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.8677, 2.5928, -3.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity56" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 61.1323, 2.5928, -3.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity80" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 61.1323, 2.5928, -39.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity89" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 61.1323, 2.5928, 29.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity113" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1323, 2.5928, 29.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity149" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34.8677, 2.5928, 29.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity164" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34.8677, 2.5928, -39.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity193" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1323, 2.5928, -39.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity4" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.13234, 2.5928, -3.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity32" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -38.8677, 2.5928, -3.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity57" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 50.1323, 2.5928, -3.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity71" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 50.1323, 2.5928, -39.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity103" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 50.1323, 2.5928, 29.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity119" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13234, 2.5928, 29.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity146" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.8677, 2.5928, 29.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity175" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.8677, 2.5928, -39.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity198" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.13234, 2.5928, -39.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity11" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.1323, 2.5928, -3.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity40" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.8677, 2.5928, -3.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity54" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 63.1323, 2.5928, -3.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity69" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 63.1323, 2.5928, -39.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity101" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 63.1323, 2.5928, 29.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity127" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1323, 2.5928, 29.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity140" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.8677, 2.5928, 29.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity158" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.8677, 2.5928, -39.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity190" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1323, 2.5928, -39.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity15" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13234, 2.5928, -3.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity36" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.8677, 2.5928, -3.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity64" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42.1323, 2.5928, -3.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity67" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42.1323, 2.5928, -39.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity100" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42.1323, 2.5928, 29.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity126" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.86766, 2.5928, 29.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity137" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.8677, 2.5928, 29.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity171" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.8677, 2.5928, -39.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity177" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.86766, 2.5928, -39.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity22" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1323, 2.5928, -3.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity31" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34.8677, 2.5928, -3.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity60" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1323, 2.5928, -3.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity83" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1323, 2.5928, -39.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity98" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1323, 2.5928, 29.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity117" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.13234, 2.5928, 29.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity133" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -41.8677, 2.5928, 29.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity163" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -41.8677, 2.5928, -39.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity181" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.13234, 2.5928, -39.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity5" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.13234, 2.5928, -7.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity33" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -38.8677, 2.5928, -7.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity59" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 50.1323, 2.5928, -7.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity82" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 50.1323, 2.5928, -43.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity90" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 50.1323, 2.5928, 25.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity114" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13234, 2.5928, 25.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity150" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.8677, 2.5928, 25.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity165" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.8677, 2.5928, -43.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity178" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.13234, 2.5928, -43.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity12" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.1323, 2.5928, -7.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity39" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.8677, 2.5928, -7.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity63" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 63.1323, 2.5928, -7.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity86" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 63.1323, 2.5928, -43.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity109" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 63.1323, 2.5928, 25.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity131" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1323, 2.5928, 25.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity141" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.8677, 2.5928, 25.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity169" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.8677, 2.5928, -43.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity196" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1323, 2.5928, -43.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity14" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13234, 2.5928, -7.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity35" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.8677, 2.5928, -7.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity62" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42.1323, 2.5928, -7.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity85" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42.1323, 2.5928, -43.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity91" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42.1323, 2.5928, 25.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity121" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.86766, 2.5928, 25.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity142" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.8677, 2.5928, 25.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity173" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.8677, 2.5928, -43.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity186" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.86766, 2.5928, -43.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity21" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1323, 2.5928, -7.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity38" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34.8677, 2.5928, -7.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity50" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1323, 2.5928, -7.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity78" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1323, 2.5928, -43.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity97" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1323, 2.5928, 25.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity112" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.13234, 2.5928, 25.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity134" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -41.8677, 2.5928, 25.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity156" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -41.8677, 2.5928, -43.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity183" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.13234, 2.5928, -43.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity6" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13234, 2.5928, -7.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity28" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.8677, 2.5928, -7.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity47" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42.1323, 2.5928, -7.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity75" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42.1323, 2.5928, -43.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity93" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42.1323, 2.5928, 25.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity123" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.86766, 2.5928, 25.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity144" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.8677, 2.5928, 25.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity155" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.8677, 2.5928, -43.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity182" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.86766, 2.5928, -43.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity10" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1323, 2.5928, -7.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity42" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -33.8677, 2.5928, -7.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity51" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 55.1323, 2.5928, -7.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity73" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 55.1323, 2.5928, -43.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity104" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 55.1323, 2.5928, 25.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity128" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.13234, 2.5928, 25.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity143" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.8677, 2.5928, 25.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity174" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.8677, 2.5928, -43.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity197" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.13234, 2.5928, -43.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity17" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.86766, 2.5928, -7.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity30" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54.8677, 2.5928, -7.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity45" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.1323, 2.5928, -7.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity70" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.1323, 2.5928, -43.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity102" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.1323, 2.5928, 25.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity118" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8677, 2.5928, 25.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity152" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.8677, 2.5928, 25.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity160" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.8677, 2.5928, -43.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity191" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8677, 2.5928, -43.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity19" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.13234, 2.5928, -7.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity43" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.8677, 2.5928, -7.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity52" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.1323, 2.5928, -7.82825 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity74" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.1323, 2.5928, -43.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity105" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.1323, 2.5928, 25.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity120" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.86766, 2.5928, 25.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity147" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.8677, 2.5928, 25.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity176" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.8677, 2.5928, -43.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity187" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.867661, 2.5928, -43.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity7" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13234, 2.5928, -16.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity26" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.8677, 2.5928, -16.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity53" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42.1323, 2.5928, -16.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity79" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42.1323, 2.5928, -52.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity106" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42.1323, 2.5928, 16.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity124" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.86766, 2.5928, 16.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity145" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.8677, 2.5928, 16.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity159" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.8677, 2.5928, -52.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity184" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.86766, 2.5928, -52.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity9" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1323, 2.5928, -16.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity41" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -33.8677, 2.5928, -16.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity55" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 55.1323, 2.5928, -16.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity68" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 55.1323, 2.5928, -52.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity92" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 55.1323, 2.5928, 16.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity115" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.13234, 2.5928, 16.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity151" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.8677, 2.5928, 16.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity168" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.8677, 2.5928, -52.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity179" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.13234, 2.5928, -52.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity16" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.86766, 2.5928, -16.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity23" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54.8677, 2.5928, -16.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity48" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.1323, 2.5928, -16.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity76" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.1323, 2.5928, -52.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity95" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.1323, 2.5928, 16.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity116" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8677, 2.5928, 16.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity139" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.8677, 2.5928, 16.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity157" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.8677, 2.5928, -52.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity189" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8677, 2.5928, -52.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity18" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.13234, 2.5928, -16.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity37" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.8677, 2.5928, -16.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity65" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.1323, 2.5928, -16.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity87" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.1323, 2.5928, -52.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity110" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.1323, 2.5928, 16.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity132" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.86766, 2.5928, 16.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity154" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.8677, 2.5928, 16.1717 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity166" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.8677, 2.5928, -52.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity194" parent="Scene" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.867661, 2.5928, -52.8283 )
+MovementSpeed = 2.0
+MaxFlyHeight = 40.0
+
+[node name="Entity2_" parent="Scene" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 7, -10 )
+
+[node name="FollowingCamera" parent="Scene" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 0.642788, 0.766044, 0, -0.766044, 0.642788, -10, 15, 7 )
+current = true
+SmoothStrength = 2.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Scene"]
+environment = SubResource( 8 )
+
+[node name="Arena" parent="." instance=ExtResource( 7 )]
+visible = false
+
+[node name="GUI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 0.814514
+margin_bottom = 0.814514
+
+[node name="ShotUserControl" parent="GUI" instance=ExtResource( 8 )]
+
+[node name="MobInfoLabel" type="Label" parent="GUI"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 89.0
+margin_bottom = 34.0
+rect_scale = Vector2( 1.5, 1.5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "MOB INFO"
+
+[node name="JumpButton" type="Button" parent="GUI"]
+margin_left = 24.5547
+margin_top = 668.148
+margin_right = 115.555
+margin_bottom = 697.148
+text = "Jump"
+
+[node name="MovXInput" type="TextEdit" parent="GUI"]
+margin_left = 221.0
+margin_top = 667.0
+margin_right = 308.0
+margin_bottom = 698.0
+
+[node name="MovYInput" type="TextEdit" parent="GUI"]
+margin_left = 311.0
+margin_top = 667.0
+margin_right = 398.0
+margin_bottom = 698.0
+
+[node name="StartMovementButton" type="Button" parent="GUI"]
+margin_left = 404.555
+margin_top = 668.148
+margin_right = 495.555
+margin_bottom = 697.148
+text = "Start Movement"
+
+[node name="StopMovementButton2" type="Button" parent="GUI"]
+margin_left = 524.555
+margin_top = 668.148
+margin_right = 638.555
+margin_bottom = 697.148
+text = "Stop Movement"
+
+[node name="OnOffFlightButton" type="Button" parent="GUI"]
+margin_left = 684.555
+margin_top = 668.148
+margin_right = 798.555
+margin_bottom = 697.148
+text = "On/Off Flight"
+
+[node name="TestShot" type="Button" parent="GUI"]
+margin_left = 844.0
+margin_top = 668.0
+margin_right = 958.0
+margin_bottom = 697.0
+text = "Test Shot"
+
+[node name="TestShot2" type="Button" parent="GUI"]
+margin_left = 984.0
+margin_top = 668.0
+margin_right = 1098.0
+margin_bottom = 697.0
+text = "Test Entity Shot"
+
+[node name="InventoryGUI" parent="GUI" instance=ExtResource( 9 )]
+margin_left = 892.759
+margin_top = 82.673
+margin_right = 991.759
+margin_bottom = 196.673
+
+[node name="EntityUserControl" parent="." instance=ExtResource( 10 )]
+Slave = NodePath("../Scene/Entity2_")
+
+[connection signal="button_up" from="GUI/JumpButton" to="." method="JumpButton_Click"]
+[connection signal="button_up" from="GUI/StartMovementButton" to="." method="StartMovementButton_Click"]
+[connection signal="button_up" from="GUI/StopMovementButton2" to="." method="StopMovementButton_Click"]
+[connection signal="button_up" from="GUI/OnOffFlightButton" to="." method="OnOffFlightButton_Click"]
+[connection signal="button_up" from="GUI/TestShot" to="." method="TestShot_Click"]
+[connection signal="button_up" from="GUI/TestShot2" to="." method="TestEntityShot_Click"]

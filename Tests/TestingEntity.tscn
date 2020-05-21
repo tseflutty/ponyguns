@@ -1,0 +1,177 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Objects/Entity/Entity.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Tests/TestingEntity.cs" type="Script" id=2]
+[ext_resource path="res://Tests/testpon_left.png" type="Texture" id=3]
+[ext_resource path="res://Tests/testpon_right.png" type="Texture" id=4]
+[ext_resource path="res://Objects/VisualItem/ItemPlace.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "MovementLeft"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("EntityTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ItPlOnHead:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.786608, 3.19288, -1.10996 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "MovementRight"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("EntityTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ItPlOnHead:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.796262, 3.19288, -1.10996 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("EntityTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ItPlOnHead:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.786608, 3.19288, -1.10996 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("EntityTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ItPlOnHead:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.796262, 3.19288, -1.10996 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "a1"
+tracks/0/type = "value"
+tracks/0/path = NodePath("EntityTexture:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -30.9999, 0, 0 ), Vector3( -24.8469, -60.5162, -39.5867 ), Vector3( -30.9999, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "a2"
+tracks/0/type = "value"
+tracks/0/path = NodePath("EntityTexture:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -30.9999, 0, 0 ), Vector3( -8.67328, 77.204, -67.8742 ), Vector3( -22.0693, 93.8331, -27.1497 ), Vector3( -30.9999, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+
+[node name="TestingEntity" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+CanFly = true
+FlySpeed = 20.0
+MovementSpeed = 10.0
+MaxFlyHeight = 60.0
+JumpStrength = 50.0
+
+[node name="CollisionBody" parent="." index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0482559, 1.31999, -0.527405 )
+
+[node name="EntityTexture" parent="." index="1"]
+transform = Transform( 2, 0, 0, 0, 1.76577, 0.515037, 0, -1.06098, 0.857168, 0, 1.3411, -0.132654 )
+texture = ExtResource( 3 )
+
+[node name="Animations" parent="." index="2"]
+anims/MovementLeft = SubResource( 1 )
+anims/MovementRight = SubResource( 2 )
+anims/StayLeft = SubResource( 3 )
+anims/StayRight = SubResource( 4 )
+anims/a1 = SubResource( 5 )
+anims/a2 = SubResource( 6 )
+anims/test = SubResource( 7 )
+
+[node name="ItPlOnHead" parent="." index="4" instance=ExtResource( 5 )]
+transform = Transform( 1, -4.596e-08, 1.39717e-07, -3.43561e-08, 0.850656, 0.525723, -1.43013e-07, -0.525723, 0.850656, -0.786608, 3.19288, -1.10996 )
+

@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Objects/Entity/Eye.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Images/Entity/Pony/Eye/Pony_SmallPupil.png" type="Texture" id=2]
+[ext_resource path="res://Images/Entity/Pony/Eye/Pony_NormalPupil.png" type="Texture" id=3]
+[ext_resource path="res://Images/Entity/Pony/Eye/Pony_BigPupil.png" type="Texture" id=4]
+[ext_resource path="res://Objects/Entity/Pony/Unicorn.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/PonyCamera.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/Entity/EntityUserControl.tscn" type="PackedScene" id=7]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 2.0935, 1, 1.83654 )
+
+[node name="EyeTests" type="Spatial"]
+
+[node name="Eye" parent="." instance=ExtResource( 1 )]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 1, 0, 0, -0.495495 )
+SmallPupilTexture = ExtResource( 2 )
+NormalPupilTexture = ExtResource( 3 )
+BigPupilTexture = ExtResource( 4 )
+PupilScale = 1
+EyeColor = Color( 0.380392, 0.654902, 0.576471, 1 )
+
+[node name="Eye2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 1, 0.652753, 0, -0.495495 )
+SmallPupilTexture = ExtResource( 2 )
+NormalPupilTexture = ExtResource( 3 )
+BigPupilTexture = ExtResource( 4 )
+PupilScale = 1
+EyeColor = Color( 0.717647, 0.0901961, 0.501961, 1 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.68958, 15.3515 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.89551, -2.74948 )
+shape = SubResource( 1 )
+
+[node name="Unicorn" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.452569, -0.280994, -3.07854 )
+CornMagicColor = Color( 1, 0, 0.878431, 1 )
+
+[node name="PonyCamera" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 0.640215, 0.768196, 0, -0.768196, 0.640215, -3.7284, -4.19104, 1.77111 )
+current = true
+DistanceToObject = 10.0
+CameraTarget = NodePath("../Eye2")
+
+[node name="EntityUserControl" parent="." instance=ExtResource( 7 )]
+Slave = NodePath("../Unicorn")
+

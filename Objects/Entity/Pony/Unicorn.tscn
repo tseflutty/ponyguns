@@ -1,0 +1,1602 @@
+[gd_scene load_steps=95 format=2]
+
+[ext_resource path="res://Objects/Entity/Pony/Pony.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Objects/Entity/Pony/Unicorn.cs" type="Script" id=2]
+[ext_resource path="res://Images/Entity/blanks/UnicornStayLeft.png" type="Texture" id=3]
+[ext_resource path="res://Objects/VisualItem/ItemPlace.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Show/CornMagicShow0000.png" type="Texture" id=5]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Sequins/CornMagicCloudSequins0006.png" type="Texture" id=6]
+[ext_resource path="res://Objects/Entity/Pony/PonyFirstEye.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/Entity/Pony/PonySecondEyeEyelash.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Images/Entity/blanks/UnicornFallLeft.png" type="Texture" id=9]
+[ext_resource path="res://Images/Entity/blanks/UnicornFallRight.png" type="Texture" id=10]
+[ext_resource path="res://Images/Entity/blanks/UnicornJumpLeft.png" type="Texture" id=11]
+[ext_resource path="res://Images/Entity/blanks/UnicornJumpRight.png" type="Texture" id=12]
+[ext_resource path="res://Images/Entity/blanks/UnicornMovementLeft1.png" type="Texture" id=13]
+[ext_resource path="res://Images/Entity/blanks/UnicornMovementLeft2.png" type="Texture" id=14]
+[ext_resource path="res://Images/Entity/blanks/UnicornMovementLeft3.png" type="Texture" id=15]
+[ext_resource path="res://Images/Entity/blanks/UnicornMovementLeft4.png" type="Texture" id=16]
+[ext_resource path="res://Images/Entity/blanks/UnicornMovementLeft5.png" type="Texture" id=17]
+[ext_resource path="res://Images/Entity/blanks/UnicornMovementLeft6.png" type="Texture" id=18]
+[ext_resource path="res://Images/Entity/blanks/UnicornMovementLeft7.png" type="Texture" id=19]
+[ext_resource path="res://Images/Entity/blanks/UnicornMovementRight1.png" type="Texture" id=20]
+[ext_resource path="res://Images/Entity/blanks/UnicornMovementRight2.png" type="Texture" id=21]
+[ext_resource path="res://Images/Entity/blanks/UnicornMovementRight3.png" type="Texture" id=22]
+[ext_resource path="res://Images/Entity/blanks/UnicornMovementRight4.png" type="Texture" id=23]
+[ext_resource path="res://Images/Entity/blanks/UnicornMovementRight5.png" type="Texture" id=24]
+[ext_resource path="res://Images/Entity/blanks/UnicornMovementRight6.png" type="Texture" id=25]
+[ext_resource path="res://Images/Entity/blanks/UnicornMovementRight7.png" type="Texture" id=26]
+[ext_resource path="res://Images/Entity/blanks/UnicornStayRight.png" type="Texture" id=27]
+[ext_resource path="res://Objects/VisualItem/Pony/CornMagicPlace.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Cloud/CornMagicCloud0000.png" type="Texture" id=29]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Cloud/CornMagicCloud0001.png" type="Texture" id=30]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Cloud/CornMagicCloud0002.png" type="Texture" id=31]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Cloud/CornMagicCloud0003.png" type="Texture" id=32]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Cloud/CornMagicCloud0004.png" type="Texture" id=33]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Cloud/CornMagicCloud0005.png" type="Texture" id=34]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Cloud/CornMagicCloud0006.png" type="Texture" id=35]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Cloud/CornMagicCloud0007.png" type="Texture" id=36]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Cloud/CornMagicCloud0008.png" type="Texture" id=37]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Cloud/CornMagicCloud0009.png" type="Texture" id=38]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Cloud/CornMagicCloud0010.png" type="Texture" id=39]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Cloud/CornMagicCloud0011.png" type="Texture" id=40]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Cloud/CornMagicCloud0012.png" type="Texture" id=41]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Cloud/CornMagicCloud0013.png" type="Texture" id=42]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Cloud/CornMagicCloud0014.png" type="Texture" id=43]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Cloud/CornMagicCloud0015.png" type="Texture" id=44]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Cloud/CornMagicCloud0016.png" type="Texture" id=45]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Cloud/CornMagicCloud0017.png" type="Texture" id=46]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Cloud/CornMagicCloud0018.png" type="Texture" id=47]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Cloud/CornMagicCloud0019.png" type="Texture" id=48]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Cloud/CornMagicCloud0020.png" type="Texture" id=49]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Cloud/CornMagicCloud0021.png" type="Texture" id=50]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Cloud/CornMagicCloud0022.png" type="Texture" id=51]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Cloud/CornMagicCloud0023.png" type="Texture" id=52]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Sequins/CornMagicCloudSequins0000.png" type="Texture" id=53]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Sequins/CornMagicCloudSequins0001.png" type="Texture" id=54]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Sequins/CornMagicCloudSequins0002.png" type="Texture" id=55]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Sequins/CornMagicCloudSequins0003.png" type="Texture" id=56]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Sequins/CornMagicCloudSequins0004.png" type="Texture" id=57]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Sequins/CornMagicCloudSequins0005.png" type="Texture" id=58]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Sequins/CornMagicCloudSequins0007.png" type="Texture" id=59]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Sequins/CornMagicCloudSequins0008.png" type="Texture" id=60]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Sequins/CornMagicCloudSequins0009.png" type="Texture" id=61]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Sequins/CornMagicCloudSequins0010.png" type="Texture" id=62]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Sequins/CornMagicCloudSequins0011.png" type="Texture" id=63]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Sequins/CornMagicCloudSequins0012.png" type="Texture" id=64]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Sequins/CornMagicCloudSequins0013.png" type="Texture" id=65]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Sequins/CornMagicCloudSequins0014.png" type="Texture" id=66]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Sequins/CornMagicCloudSequins0015.png" type="Texture" id=67]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Sequins/CornMagicCloudSequins0016.png" type="Texture" id=68]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Sequins/CornMagicCloudSequins0017.png" type="Texture" id=69]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Sequins/CornMagicCloudSequins0018.png" type="Texture" id=70]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Sequins/CornMagicCloudSequins0019.png" type="Texture" id=71]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Sequins/CornMagicCloudSequins0020.png" type="Texture" id=72]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Sequins/CornMagicCloudSequins0021.png" type="Texture" id=73]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Sequins/CornMagicCloudSequins0022.png" type="Texture" id=74]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Sequins/CornMagicCloudSequins0023.png" type="Texture" id=75]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Show/CornMagicShow0005.png" type="Texture" id=76]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Show/CornMagicShow0004.png" type="Texture" id=77]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Show/CornMagicShow0003.png" type="Texture" id=78]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Show/CornMagicShow0002.png" type="Texture" id=79]
+[ext_resource path="res://Images/Entity/Pony/Unicorn/CornMagicAnimation/Show/CornMagicShow0001.png" type="Texture" id=80]
+
+[sub_resource type="Animation" id=1]
+resource_name = "FallLeft"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("EntityTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 9 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("EntityTexture/PonyFirstEye:FlipH")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("EntityTexture/PonyFirstEye:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.450159, 0.269665, 0.000638902 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("EntityTexture/PonySecondEyeEyelash:FlipH")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("EntityTexture/PonySecondEyeEyelash:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.268809, 0.27, 0.00100011 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("HeadAtackListener:translation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.710359, 2.38786, 0.0619 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("EntityTexture/CornMagic:translation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.508964, 0.660835, 0.0500005 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("EntityTexture/CornMagic:flip_h")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("EntityTexture/Sequins:flip_h")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("EntityTexture/Sequins:translation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.509082, 0.661837, 0.0550005 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "FallRight"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("EntityTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 10 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("EntityTexture/PonyFirstEye:FlipH")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("EntityTexture/PonyFirstEye:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.450469, 0.269665, 0.000638902 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("EntityTexture/PonySecondEyeEyelash:FlipH")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("EntityTexture/PonySecondEyeEyelash:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.268643, 0.27, 0.00100005 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("HeadAtackListener:translation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.749661, 2.38786, 0.0619 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("EntityTexture/CornMagic:flip_h")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("EntityTexture/CornMagic:translation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.479662, 0.598129, 0.0500013 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("EntityTexture/Sequins:flip_h")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("EntityTexture/Sequins:translation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.480035, 0.59761, 0.0550007 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("EntityTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("EntityTexture/PonyFirstEye:FlipH")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("EntityTexture/PonyFirstEye:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.479706, 0.269665, 0.000638902 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("EntityTexture/PonySecondEyeEyelash:translation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.299079, 0.27, 0.00100011 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("EntityTexture/PonySecondEyeEyelash:FlipH")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("HeadAtackListener:translation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.710359, 2.38786, 0.0619 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("EntityTexture/CornMagic:flip_h")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("EntityTexture/CornMagic:translation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.539068, 0.647939, 0.0500004 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("EntityTexture/Sequins:flip_h")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("EntityTexture/Sequins:translation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.54026, 0.649344, 0.0550006 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("EntityTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 12 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("EntityTexture/PonyFirstEye:FlipH")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("EntityTexture/PonyFirstEye:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.479903, 0.269665, 0.000638902 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("EntityTexture/PonySecondEyeEyelash:translation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.301, 0.27, 0.001 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("EntityTexture/PonySecondEyeEyelash:FlipH")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("HeadAtackListener:translation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.749661, 2.38786, 0.0619 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("EntityTexture/CornMagic:flip_h")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("EntityTexture/CornMagic:translation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.538905, 0.659585, 0.0500007 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("EntityTexture/Sequins:translation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.538809, 0.659882, 0.0550005 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("EntityTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("EntityTexture/ItPlInMouth:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.532, 0.1, 0.008 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("EntityTexture/CornMagic:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( -0.509082, 0.68873, 0.0500006 ), Vector3( -0.509082, 0.6683, 0.0500008 ), Vector3( -0.509082, 0.640388, 0.0500007 ), Vector3( -0.509082, 0.655634, 0.0500007 ), Vector3( -0.509082, 0.691972, 0.0500008 ), Vector3( -0.509082, 0.628803, 0.0500005 ), Vector3( -0.509082, 0.627712, 0.0500009 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("EntityTexture/CornMagic:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("EntityTexture/PonyFirstEye:FlipH")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("EntityTexture/PonyFirstEye:translation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( -0.45, 0.299, 0.001 ), Vector3( -0.45, 0.285, 0.001 ), Vector3( -0.45, 0.255, 0.001 ), Vector3( -0.450421, 0.269665, 0.000638783 ), Vector3( -0.45, 0.3, 0.001 ), Vector3( -0.45, 0.24, 0.001 ), Vector3( -0.45, 0.255, 0.001 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("EntityTexture/PonySecondEyeEyelash:FlipH")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("EntityTexture/PonySecondEyeEyelash:translation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( -0.269, 0.3, 0.001 ), Vector3( -0.269, 0.285, 0.001 ), Vector3( -0.269, 0.255, 0.001 ), Vector3( -0.268807, 0.27, 0.00100005 ), Vector3( -0.269, 0.3, 0.001 ), Vector3( -0.269, 0.24, 0.001 ), Vector3( -0.269, 0.255, 0.001 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("HeadAtackListener:translation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.710359, 2.38786, 0.0619 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("EntityTexture/Sequins:flip_h")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("EntityTexture/Sequins:translation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( -0.509082, 0.689537, 0.0550004 ), Vector3( -0.509082, 0.669054, 0.0550004 ), Vector3( -0.509082, 0.640647, 0.0550005 ), Vector3( -0.509082, 0.656338, 0.0550002 ), Vector3( -0.509082, 0.692843, 0.0550004 ), Vector3( -0.509082, 0.629727, 0.0550004 ), Vector3( -0.509082, 0.629109, 0.0550004 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "MovementLeftBack"
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("EntityTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 19 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 13 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("EntityTexture/ItPlInMouth:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.532, 0.1, 0.008 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("EntityTexture/CornMagic:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( -0.505164, 0.629102, 0.0500003 ), Vector3( -0.505164, 0.629102, 0.0500003 ), Vector3( -0.505164, 0.69156, 0.0500003 ), Vector3( -0.505164, 0.6588, 0.0500004 ), Vector3( -0.505164, 0.642807, 0.0500006 ), Vector3( -0.505164, 0.675873, 0.0500006 ), Vector3( -0.505164, 0.6901, 0.0500004 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("EntityTexture/CornMagic:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("EntityTexture/PonyFirstEye:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( -0.45, 0.255, 0.001 ), Vector3( -0.45, 0.24, 0.001 ), Vector3( -0.45, 0.3, 0.001 ), Vector3( -0.450421, 0.269665, 0.000638783 ), Vector3( -0.45, 0.255, 0.001 ), Vector3( -0.45, 0.285, 0.001 ), Vector3( -0.45, 0.299, 0.001 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("EntityTexture/PonySecondEyeEyelash:FlipH")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("EntityTexture/PonySecondEyeEyelash:translation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( -0.269, 0.255, 0.001 ), Vector3( -0.269, 0.24, 0.001 ), Vector3( -0.269, 0.3, 0.001 ), Vector3( -0.269, 0.27, 0.001 ), Vector3( -0.269, 0.255, 0.001 ), Vector3( -0.269, 0.285, 0.001 ), Vector3( -0.269, 0.3, 0.001 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("HeadAtackListener:translation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.710359, 2.38786, 0.0619 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("EntityTexture/PonyFirstEye:FlipH")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("EntityTexture/Sequins:flip_h")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("EntityTexture/Sequins:translation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( -0.505332, 0.629504, 0.0550004 ), Vector3( -0.505335, 0.62972, 0.0550004 ), Vector3( -0.505334, 0.691652, 0.0550003 ), Vector3( -0.505334, 0.66003, 0.0550002 ), Vector3( -0.505333, 0.644112, 0.0550003 ), Vector3( -0.505333, 0.676137, 0.0550005 ), Vector3( -0.505332, 0.690226, 0.0550005 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("EntityTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("EntityTexture/ItPlInMouth:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.532, 0.1, 0.008 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("EntityTexture/CornMagic:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 0.510881, 0.690585, 0.0500001 ), Vector3( 0.510881, 0.674187, 0.0500003 ), Vector3( 0.510881, 0.644212, 0.0500001 ), Vector3( 0.510881, 0.66049, 0.0500004 ), Vector3( 0.510881, 0.687858, 0.0500004 ), Vector3( 0.510881, 0.630018, 0.0500003 ), Vector3( 0.510881, 0.645067, 0.0500003 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("EntityTexture/CornMagic:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("EntityTexture/PonyFirstEye:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 0.45, 0.3, 0.001 ), Vector3( 0.45, 0.285, 0.001 ), Vector3( 0.45, 0.255, 0.001 ), Vector3( 0.45, 0.27, 0.001 ), Vector3( 0.45, 0.3, 0.001 ), Vector3( 0.45, 0.24, 0.001 ), Vector3( 0.45, 0.255, 0.001 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("EntityTexture/PonyFirstEye:FlipH")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("EntityTexture/PonySecondEyeEyelash:FlipH")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("EntityTexture/PonySecondEyeEyelash:translation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 0.271, 0.3, 0.001 ), Vector3( 0.271, 0.285, 0.001 ), Vector3( 0.271, 0.255, 0.001 ), Vector3( 0.271416, 0.27, 0.00100011 ), Vector3( 0.271, 0.3, 0.001 ), Vector3( 0.271, 0.24, 0.001 ), Vector3( 0.271, 0.255, 0.001 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("HeadAtackListener:translation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.749661, 2.38786, 0.0619 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("EntityTexture/Sequins:flip_h")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("EntityTexture/Sequins:translation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 0.510893, 0.690047, 0.0550002 ), Vector3( 0.510893, 0.673966, 0.0550001 ), Vector3( 0.510893, 0.643885, 0.0550001 ), Vector3( 0.510893, 0.659327, 0.0550002 ), Vector3( 0.510893, 0.68622, 0.0550002 ), Vector3( 0.510893, 0.629224, 0.0550004 ), Vector3( 0.510893, 0.644032, 0.0550002 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "MovementRightBack"
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("EntityTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 26 ), ExtResource( 25 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 21 ), ExtResource( 20 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("EntityTexture/ItPlInMouth:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.532, 0.1, 0.008 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("EntityTexture/CornMagic:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 0.510102, 0.642542, 0.0499998 ), Vector3( 0.510102, 0.629646, 0.0499999 ), Vector3( 0.510102, 0.689469, 0.05 ), Vector3( 0.510102, 0.660414, 0.05 ), Vector3( 0.510102, 0.644616, 0.0499999 ), Vector3( 0.510102, 0.675893, 0.05 ), Vector3( 0.510102, 0.690252, 0.05 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("EntityTexture/CornMagic:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("EntityTexture/PonyFirstEye:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 0.45, 0.255, 0.001 ), Vector3( 0.45, 0.24, 0.001 ), Vector3( 0.45, 0.3, 0.001 ), Vector3( 0.45, 0.27, 0.001 ), Vector3( 0.45, 0.255, 0.001 ), Vector3( 0.45, 0.285, 0.001 ), Vector3( 0.45, 0.3, 0.001 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("EntityTexture/PonyFirstEye:FlipH")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("EntityTexture/PonySecondEyeEyelash:FlipH")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("EntityTexture/PonySecondEyeEyelash:translation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 0.271, 0.255, 0.001 ), Vector3( 0.271, 0.24, 0.001 ), Vector3( 0.271, 0.3, 0.001 ), Vector3( 0.271, 0.27, 0.001 ), Vector3( 0.271, 0.255, 0.001 ), Vector3( 0.271, 0.285, 0.001 ), Vector3( 0.271, 0.3, 0.001 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("HeadAtackListener:translation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.749661, 2.38786, 0.0619 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("EntityTexture/Sequins:flip_h")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("EntityTexture/Sequins:translation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 0.510893, 0.642172, 0.0550005 ), Vector3( 0.510893, 0.630223, 0.0550007 ), Vector3( 0.510893, 0.689921, 0.0550008 ), Vector3( 0.510893, 0.661092, 0.0550008 ), Vector3( 0.510893, 0.643835, 0.0550008 ), Vector3( 0.510893, 0.674651, 0.0550009 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("EntityTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("EntityTexture/ItPlInMouth:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.532, 0.1, 0.008 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("EntityTexture/CornMagic:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.509082, 0.656338, 0.0500004 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("EntityTexture/CornMagic:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("EntityTexture/PonyFirstEye:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.450429, 0.269946, 0.00105232 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("EntityTexture/PonyFirstEye:FlipH")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("EntityTexture/PonySecondEyeEyelash:translation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.268807, 0.270281, 0.0014137 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("EntityTexture/PonySecondEyeEyelash:FlipH")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("HeadAtackListener:translation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.710359, 2.38786, 0.0619 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("EntityTexture/Sequins:flip_h")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("EntityTexture/Sequins:translation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.509082, 0.656338, 0.0550002 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("EntityTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 27 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("EntityTexture/ItPlInMouth:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.532, 0.1, 0.008 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("EntityTexture/CornMagic:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.509771, 0.662703, 0.0500003 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("EntityTexture/CornMagic:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("EntityTexture/PonyFirstEye:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.450115, 0.269665, 0.000638902 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("EntityTexture/PonyFirstEye:FlipH")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("EntityTexture/PonySecondEyeEyelash:FlipH")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("EntityTexture/PonySecondEyeEyelash:translation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.271416, 0.27, 0.00100011 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("HeadAtackListener:translation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.749661, 2.38786, 0.0619 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("EntityTexture/Sequins:flip_h")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("EntityTexture/Sequins:translation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.510893, 0.661406, 0.0550003 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "CornMagic"
+length = 1.68
+loop = true
+step = 0.07
+tracks/0/type = "value"
+tracks/0/path = NodePath("EntityTexture/CornMagic:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.07, 0.14, 0.21, 0.28, 0.35, 0.42, 0.49, 0.56, 0.63, 0.7, 0.77, 0.84, 0.91, 0.98, 1.05, 1.12, 1.19, 1.26, 1.33, 1.4, 1.47, 1.54, 1.61 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("EntityTexture/Sequins:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.07, 0.14, 0.21, 0.28, 0.35, 0.42, 0.49, 0.56, 0.63, 0.7, 0.77, 0.84, 0.91, 0.98, 1.05, 1.12, 1.19, 1.26, 1.33, 1.4, 1.47, 1.54, 1.61 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 6 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "ItemsFly"
+length = 1.68
+loop = true
+step = 0.07
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("CornItem1/ItPlCorn1:translation:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1.9, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 1.9, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 1.9, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 2.4, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( -0.14, 0.28, 0.7, 1.12, 1.54, 1.89, 2.31 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("CornItem2/ItPlCorn2:translation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 3.2, -0.25, 0, 0.25, 0, 3.1, -0.25, 0, 0.25, 0, 3.2, -0.25, 0, 0.25, 0, 3.1, -0.25, 0, 0.25, 0, 3.2, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.42, 0.84, 1.26, 1.68 )
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "Off"
+length = 0.3
+step = 0.05
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("EntityTexture/Sequins:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("EntityTexture/CornMagic:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 5 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("EntityTexture/CornMagic:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.25, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=14]
+length = 0.3
+step = 0.05
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("EntityTexture/Sequins:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.05, 0.3 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("EntityTexture/CornMagic:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.05, 0.1, 0.15, 0.2, 0.25, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 5 ), ExtResource( 80 ), ExtResource( 79 ), ExtResource( 78 ), ExtResource( 77 ), ExtResource( 76 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("EntityTexture/CornMagic:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.05 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[node name="Unicorn" index="0" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+FlySpeed = 0.0
+MovementSpeed = 12.0
+_typeName = "pony.unicorn"
+EntityEyes = PoolStringArray( "EntityTexture/PonyFirstEye", "EntityTexture/PonySecondEyeEyelash" )
+CornMagicColor = Color( 1, 0, 0.878431, 1 )
+
+[node name="CollisionBody" parent="." index="0"]
+transform = Transform( 0.791, 0, 0, 0, 1.051, 0, 0, 0, 0.893, 0, 1.032, 0.09 )
+
+[node name="EntityTexture" parent="." index="1"]
+transform = Transform( 2, 0, 0, 0, 1.75235, 0.525723, 0, -1.08299, 0.850656, 0, 1.42038, 0.141864 )
+texture = ExtResource( 3 )
+
+[node name="ItPlInMouth" parent="EntityTexture" index="0" instance=ExtResource( 4 )]
+transform = Transform( 0.432794, 0, 0, 0, 0.432794, -3.8743e-07, 0, -5.96046e-08, 1, -0.532, 0.1, 0.008 )
+
+[node name="CornMagic" type="Sprite3D" parent="EntityTexture" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, -5.36442e-07, 0, 4.76837e-07, 1, -0.509082, 0.656338, 0.0500004 )
+visible = false
+shaded = true
+double_sided = false
+alpha_cut = 2
+texture = ExtResource( 5 )
+
+[node name="Sequins" type="Sprite3D" parent="EntityTexture" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, -5.36442e-07, 0, 4.76837e-07, 1, -0.509082, 0.656338, 0.0550002 )
+modulate = Color( 1, 1, 1, 0 )
+shaded = true
+double_sided = false
+alpha_cut = 2
+texture = ExtResource( 6 )
+
+[node name="PonyFirstEye" parent="EntityTexture" index="3" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, -1.04308e-07, 0, 4.76837e-07, 0.881, -0.45, 0.27, 0.01 )
+EyeColor = Color( 0, 0.317647, 0.878431, 1 )
+PupilPosition = Vector2( -1, -1 )
+
+[node name="PonySecondEyeEyelash" parent="EntityTexture" index="4" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, -2.83122e-07, 0, 2.74181e-06, 1, -0.269, 0.27, 0.01 )
+EyeColor = Color( 0, 0.317647, 0.878431, 1 )
+PupilPosition = Vector2( -1, -1 )
+BlinkWithConnected = true
+ConnectedEyePath = NodePath("../PonyFirstEye")
+
+[node name="Animations" parent="." index="2"]
+anims/FallLeft = SubResource( 1 )
+anims/FallRight = SubResource( 2 )
+anims/JumpLeft = SubResource( 3 )
+anims/JumpRight = SubResource( 4 )
+anims/MovementLeft = SubResource( 5 )
+anims/MovementLeftBack = SubResource( 6 )
+anims/MovementRight = SubResource( 7 )
+anims/MovementRightBack = SubResource( 8 )
+anims/StayLeft = SubResource( 9 )
+anims/StayRight = SubResource( 10 )
+
+[node name="CornItem1" type="Spatial" parent="." index="4"]
+transform = Transform( 1, 0, 0, 0, 0.850656, 0.525723, 0, -0.525723, 0.850656, -2.623, 0.005, 1.14382 )
+
+[node name="ItPlCorn1" parent="CornItem1" index="0" instance=ExtResource( 28 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.91687, 5.96046e-08 )
+
+[node name="CornItem2" type="Spatial" parent="." index="5"]
+transform = Transform( 1, 0, 0, 0, 0.850656, 0.525723, 0, -0.525723, 0.850656, -2.082, 0.005, 1.14382 )
+
+[node name="ItPlCorn2" parent="CornItem2" index="0" instance=ExtResource( 28 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -5.96046e-08 )
+
+[node name="CornAnimations" type="AnimationPlayer" parent="." index="6"]
+anims/CornMagic = SubResource( 11 )
+
+[node name="CornItemsAnimations" type="AnimationPlayer" parent="." index="7"]
+autoplay = "ItemsFly"
+anims/ItemsFly = SubResource( 12 )
+
+[node name="OnOffCornAnimations" type="AnimationPlayer" parent="." index="8"]
+anims/Off = SubResource( 13 )
+anims/On = SubResource( 14 )
+
+[node name="HeadAtackListener" parent="." index="10"]
+transform = Transform( 3.60086, 0, 0, 0, 3.87189, 0, 0, 0, 3.56523, -0.710359, 2.38786, 0.0619 )
+
+[node name="Shape" parent="BellowTracker" index="0"]
+transform = Transform( 0.929111, 0, 0, 0, 0.553347, 0, 0, 0, 0.888624, 0.147155, -0.602705, 0.0239585 )
+
+[connection signal="animation_finished" from="OnOffCornAnimations" to="." method="OnOffCornAnimations_AnimationFinished"]

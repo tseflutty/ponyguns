@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://GUI/ContextMenu/ContextMenu.tscn" type="PackedScene" id=1]
+
+[node name="ContextMenuTests" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.10352e-05
+margin_top = -1.52588e-05
+
+[node name="ContextMenu" parent="." instance=ExtResource( 1 )]
+margin_left = 788.371
+margin_top = 252.272
+margin_right = 851.371
+margin_bottom = 482.272
+Items = PoolStringArray( "q1", "gggggggggggggggggg" )
+Title = "test"
+
+[node name="Control" type="Control" parent="."]
+margin_right = 165.0
+margin_bottom = 40.0
+

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/GUI/HeaderPanel.cs" type="Script" id=1]
+
+[node name="HeaderPanel" type="Control"]
+margin_right = 398.0
+margin_bottom = 91.0
+script = ExtResource( 1 )
+

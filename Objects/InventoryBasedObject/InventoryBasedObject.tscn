@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Objects/InteractiveObject.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Objects/InventoryBasedObject/InventoryBasedObject.cs" type="Script" id=2]
+
+[sub_resource type="SphereShape" id=1]
+resource_local_to_scene = true
+
+[node name="InventoryBasedObject" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="CollisionShape" parent="InteractArea" index="0"]
+shape = SubResource( 1 )
+
+[connection signal="StartInteractFrom" from="." to="." method="_InventoryBasedObject_StartInteract"]
+[connection signal="StartedInteractFrom" from="." to="." method="_InventoryBasedObject_StartedInteract"]
+[connection signal="StopInteractFrom" from="." to="." method="_InventoryBasedObject_StopInteract"]

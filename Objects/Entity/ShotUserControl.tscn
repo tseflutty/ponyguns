@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Objects/Entity/ShotUserControl.cs" type="Script" id=1]
+[ext_resource path="res://Images/GUI/Cursor/ShotCursor.png" type="Texture" id=2]
+
+[node name="ShotUserControl" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+AimTexture = ExtResource( 2 )
+

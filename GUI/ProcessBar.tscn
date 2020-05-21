@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/GUI/ProcessBar.cs" type="Script" id=1]
+
+[node name="ProcessBar" type="Control"]
+margin_right = 369.0
+margin_bottom = 42.0
+script = ExtResource( 1 )
+

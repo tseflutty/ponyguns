@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Objects/InventoryBasedObject/VisualInventoryObject.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Tests/TestVisualInventoryObject.cs" type="Script" id=2]
+[ext_resource path="res://Objects/VisualItem/InventoryItemPlace.tscn" type="PackedScene" id=3]
+
+[sub_resource type="SphereShape" id=1]
+resource_local_to_scene = true
+
+[sub_resource type="CubeMesh" id=2]
+
+[node name="TestVisualInventoryObject " index="0" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+GroupSizes = PoolIntArray( 3, 1 )
+GroupNames = PoolStringArray( "На столе", "На полу" )
+
+[node name="CollisionShape" parent="InteractArea" index="0"]
+transform = Transform( 1.77093, 0, 0, 0, 1.70045, 0, 0, 0, 1.76515, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="." index="1"]
+transform = Transform( 0.482896, 0, 0, 0, 0.387391, 0, 0, 0, 0.427392, 0, 0.326383, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Top1" parent="." index="2" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.265552, 0.940904, -0.0725889 )
+
+[node name="Top3" parent="." index="3" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.248902, 0.940904, -0.0725889 )
+
+[node name="Floor1" parent="." index="4" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.248902, 0.193219, 0.661136 )
+
+[connection signal="StopInteractFrom" from="." to="." method="_on_TestVisualInventoryObject__StopInteractFromTEST"]

@@ -1,0 +1,371 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://Objects/Entity/Entity.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Objects/Entity/Slime/Slime.cs" type="Script" id=2]
+[ext_resource path="res://Objects/Entity/AI/ImprovedMobAI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Images/Entity/Slime/SlimeStayLeft1.png" type="Texture" id=4]
+[ext_resource path="res://Images/Entity/Slime/SlimeJumpLeft1.png" type="Texture" id=5]
+[ext_resource path="res://Images/Entity/Slime/SlimeStayRight1.png" type="Texture" id=6]
+[ext_resource path="res://Images/Entity/Slime/SlimeJumpRight1.png" type="Texture" id=7]
+[ext_resource path="res://Images/Entity/Slime/SlimeStayLeft2.png" type="Texture" id=8]
+[ext_resource path="res://Images/Entity/Slime/SlimeStayLeft3.png" type="Texture" id=9]
+[ext_resource path="res://Images/Entity/Slime/SlimeStayRight2.png" type="Texture" id=10]
+[ext_resource path="res://Images/Entity/Slime/SlimeStayRight3.png" type="Texture" id=11]
+[ext_resource path="res://Objects/Atack/AtackArea.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Objects/Atack/AtackListener.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Models/SightShape.shape" type="Shape" id=14]
+[ext_resource path="res://Models/SigthShape.obj" type="ArrayMesh" id=15]
+
+[sub_resource type="Animation" id=1]
+resource_name = "FallLeft"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("EntityTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ), ExtResource( 5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AtackArea:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector3( 0.42792, 0.447227, 0.434735 ), Vector3( 2.70964, 0.992716, 3.36851 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AtackArea:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.297662, 0.239308, -0.0365523 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "FallRight"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("EntityTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 6 ), ExtResource( 7 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AtackArea:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector3( 0.42792, 0.447227, 0.434735 ), Vector3( 2.70964, 0.992716, 3.36851 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AtackArea:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.305112, 0.239308, -0.0365523 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "JumpLeft"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("EntityTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 5 ), ExtResource( 4 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AtackArea:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.42792, 0.447227, 0.434735 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "JumpRight"
+tracks/0/type = "value"
+tracks/0/path = NodePath("EntityTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ), ExtResource( 6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AtackArea:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.42792, 0.447227, 0.434735 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "MovementLeft"
+length = 0.6
+loop = true
+step = 0.14
+tracks/0/type = "value"
+tracks/0/path = NodePath("EntityTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.14, 0.28, 0.42 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AtackArea:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.42792, 0.447227, 0.434735 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "MovementRight"
+length = 0.6
+loop = true
+step = 0.14
+tracks/0/type = "value"
+tracks/0/path = NodePath("EntityTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.14, 0.28, 0.42 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 6 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 10 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AtackArea:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.42792, 0.447227, 0.434735 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.6
+loop = true
+step = 0.14
+tracks/0/type = "value"
+tracks/0/path = NodePath("EntityTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.14, 0.28, 0.42 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AtackArea:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.42792, 0.447227, 0.434735 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.6
+loop = true
+step = 0.14
+tracks/0/type = "value"
+tracks/0/path = NodePath("EntityTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.14, 0.28, 0.42 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 6 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 10 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AtackArea:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.42792, 0.447227, 0.434735 ) ]
+}
+
+[sub_resource type="SphereMesh" id=9]
+
+[sub_resource type="SpatialMaterial" id=10]
+flags_unshaded = true
+albedo_color = Color( 0.0705882, 0.215686, 0.878431, 1 )
+
+[sub_resource type="SpatialMaterial" id=11]
+flags_transparent = true
+flags_unshaded = true
+albedo_color = Color( 0.745098, 0.113725, 1, 0.141176 )
+
+[sub_resource type="SphereShape" id=12]
+radius = 4.2986
+
+[sub_resource type="SphereMesh" id=13]
+
+[sub_resource type="SpatialMaterial" id=14]
+flags_transparent = true
+flags_unshaded = true
+albedo_color = Color( 0.87451, 0, 1, 0.101961 )
+
+[node name="Slime" index="0" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+Health = 15
+_typeName = "mob.slime"
+MaxHealth = 15
+PathToDeadAnimation = "res://Objects/Entity/Slime/GreenSlimeDeadAnimation.tscn"
+JumpStrength = 29.0
+_AtackListeners = PoolStringArray( "AtackListener" )
+_AtackAreas = PoolStringArray( "AtackArea" )
+Height = 60.0
+
+[node name="ImprovedMobAI" parent="." index="0" instance=ExtResource( 3 )]
+AiSlave = NodePath("..")
+_SigthRayCast = NodePath("../SightRayCast")
+_SightArea = NodePath("../CollisionShape")
+TypeNamesTarget = PoolStringArray( "pony.unicorn" )
+
+[node name="CollisionBody" parent="." index="1"]
+transform = Transform( 0.634151, 0, 0, 0, 0.564194, 0, 0, 0, 0.549667, 0, 0.708092, -0.0283046 )
+
+[node name="EntityTexture" parent="." index="2"]
+transform = Transform( 2, 0, 0, 0, 1.75235, 0.515209, 0, -1.08299, 0.833642, 0, 0.610798, 0.0832607 )
+texture = ExtResource( 4 )
+
+[node name="Animations" parent="." index="3"]
+anims/FallLeft = SubResource( 1 )
+anims/FallRight = SubResource( 2 )
+anims/JumpLeft = SubResource( 3 )
+anims/JumpRight = SubResource( 4 )
+anims/MovementLeft = SubResource( 5 )
+anims/MovementRight = SubResource( 6 )
+anims/StayLeft = SubResource( 7 )
+anims/StayRight = SubResource( 8 )
+
+[node name="AtackArea" parent="." index="5" instance=ExtResource( 12 )]
+transform = Transform( 0.42792, 0, 0, 0, 0.447227, 0, 0, 0, 0.434735, -0.297662, 0.239308, -0.0365523 )
+TagExceptions = PoolIntArray( 1 )
+
+[node name="AtackListener" parent="." index="6" instance=ExtResource( 13 )]
+transform = Transform( 2.79026, 0, 0, 0, 2.97313, 0, 0, 0, 2.01027, 0, 0.746485, -0.00416088 )
+Tags = PoolIntArray( 1 )
+
+[node name="SightRayCast" type="RayCast" parent="." index="7"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.654419, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, 30 )
+
+[node name="MeshInstance" type="MeshInstance" parent="SightRayCast" index="0"]
+transform = Transform( 0.189672, 0, 0, 0, 0.206387, 0, 0, 0, 0.236344, 0, 0, 1.69629 )
+visible = false
+mesh = SubResource( 9 )
+material/0 = SubResource( 10 )
+
+[node name="CollisionShape" type="Area" parent="." index="8"]
+editor/display_folded = true
+visible = false
+
+[node name="CollisionShape" type="CollisionShape" parent="CollisionShape" index="0"]
+editor/display_folded = true
+transform = Transform( 10.8158, 0, 0, 0, 6.87325, 0, 0, 0, 15.0335, 0, 0.553589, 0 )
+shape = ExtResource( 14 )
+
+[node name="SigthShape" type="MeshInstance" parent="CollisionShape/CollisionShape" index="0"]
+mesh = ExtResource( 15 )
+material/0 = SubResource( 11 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="CollisionShape" index="1"]
+shape = SubResource( 12 )
+
+[node name="MeshInstance" type="MeshInstance" parent="CollisionShape/CollisionShape2" index="0"]
+transform = Transform( 4.62665, 0, 0, 0, 4.27048, 0, 0, 0, 4.54146, 0, 0, 0 )
+mesh = SubResource( 13 )
+material/0 = SubResource( 14 )
+
+[node name="BellowTracker" parent="." index="9"]
+editor/display_folded = true
+visible = false
+

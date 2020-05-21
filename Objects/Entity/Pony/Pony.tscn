@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Objects/Entity/Entity.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Objects/Entity/Pony/Pony.cs" type="Script" id=2]
+[ext_resource path="res://Images/Entity/blanks/UnicornStayRight.png" type="Texture" id=3]
+[ext_resource path="res://Objects/Atack/AtackListener.tscn" type="PackedScene" id=4]
+
+[sub_resource type="BoxShape" id=1]
+
+[node name="Pony" index="0" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+_typeName = "pomy"
+AtackModeDuration = 0.2
+SightHDis = 0.3
+_AtackListeners = PoolStringArray( "BodyAtackListener", "HeadAtackListener" )
+
+[node name="CollisionBody" parent="." index="0"]
+transform = Transform( 0.786754, 0, 0, 0, 1.04649, 0, 0, 0, 0.89311, 0, 1.032, 0.09 )
+shape = SubResource( 1 )
+
+[node name="EntityTexture" parent="." index="1"]
+transform = Transform( 2, 0, 0, 0, 1.75235, 0.525723, 0, -1.08299, 0.850656, 0, 1.43855, 0.089153 )
+texture = ExtResource( 3 )
+
+[node name="BodyAtackListener" parent="." index="4" instance=ExtResource( 4 )]
+transform = Transform( 6.56866, 0, 0, 0, 3.87189, 0, 0, 0, 3.56523, 0, 1.03325, 0.0619 )
+Tags = PoolIntArray( 2 )
+
+[node name="HeadAtackListener" parent="." index="5" instance=ExtResource( 4 )]
+transform = Transform( 3.60086, 0, 0, 0, 3.87189, 0, 0, 0, 3.56523, 0.73259, 2.38786, 0.0619 )
+Tags = PoolIntArray( 2 )
+
+[node name="Shape" parent="BellowTracker" index="0"]
+transform = Transform( 0.929111, 0, 0, 0, 0.553347, 0, 0, 0, 0.607354, 0.147155, -0.811103, -0.207596 )
+

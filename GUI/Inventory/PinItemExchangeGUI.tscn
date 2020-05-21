@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://GUI/PointerMenu/PointerMenuCouple.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/GUI/Inventory/PinItemExchangeGUI.cs" type="Script" id=2]
+[ext_resource path="res://GUI/Inventory/ExchangeInventoryGUI.tscn" type="PackedScene" id=3]
+
+[node name="PinItemExchangeGUI" instance=ExtResource( 1 )]
+margin_top = -0.822159
+margin_bottom = -0.822144
+script = ExtResource( 2 )
+
+[node name="PointerMenuContainer1" parent="." index="0"]
+_Menu_ = NodePath("InventoryGUI")
+ShowAtReady = true
+
+[node name="InventoryGUI" parent="PointerMenuContainer1" index="2" instance=ExtResource( 3 )]
+visible = true
+show_behind_parent = true
+margin_left = -144.01
+margin_top = -47.8479
+margin_right = -45.0096
+margin_bottom = 66.1521
+
+[node name="PointerMenuContainer2" parent="." index="1"]
+_Menu_ = NodePath("InventoryGUI")
+ShowAtReady = true
+
+[node name="InventoryGUI" parent="PointerMenuContainer2" index="2" instance=ExtResource( 3 )]
+visible = true
+show_behind_parent = true
+margin_left = -214.01
+margin_top = -47.8479
+margin_right = -115.01
+margin_bottom = 66.1521
+

@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Objects/PonyCamera.cs" type="Script" id=1]
+
+[sub_resource type="CubeMesh" id=1]
+
+[node name="PonyCamera" type="Camera"]
+fov = 50.0
+far = 200.0
+script = ExtResource( 1 )
+
+[node name="ObjectPoint" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -26 )
+
+[node name="RayCastParent" type="Spatial" parent="."]
+
+[node name="temp" type="MeshInstance" parent="RayCastParent"]
+transform = Transform( 0.0351157, 0, 0, 0, 0.0351157, 0, 0, 0, 0.345511, 0, 0, -0.345 )
+visible = false
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="RayCast" type="RayCast" parent="RayCastParent"]
+enabled = true
+cast_to = Vector3( 0, 0, -80 )
+

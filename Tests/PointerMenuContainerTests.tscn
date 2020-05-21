@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Tests/PointerMenuContainerTests.cs" type="Script" id=1]
+[ext_resource path="res://GUI/PointerMenu/PointerMenuContainer.tscn" type="PackedScene" id=2]
+
+[node name="PointerMenuContainerTests" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 0.822144
+margin_bottom = 0.822144
+script = ExtResource( 1 )
+
+[node name="PointerMenuContainer" parent="." instance=ExtResource( 2 )]
+margin_left = 647.145
+margin_top = 353.802
+margin_right = 647.145
+margin_bottom = 353.802
+GUIPosition = 1
+_Menu_ = NodePath("SomeControl")
+ShowAtReady = true
+
+[node name="SomeControl" type="ColorRect" parent="PointerMenuContainer"]
+margin_left = -273.776
+margin_top = -243.436
+margin_right = 24.2243
+margin_bottom = -50.4364
+
+[node name="Button" type="Button" parent="PointerMenuContainer/SomeControl"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -73.0
+margin_top = -25.5
+margin_right = 73.0
+margin_bottom = 25.5
+text = "Press me"
+

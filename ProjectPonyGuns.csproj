@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{27F3F10D-9512-4110-A8C1-19DA35684B85}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <OutputPath>.mono/temp/bin/$(Configuration)</OutputPath>
+    <RootNamespace>ProjectPonyGuns</RootNamespace>
+    <AssemblyName>ProjectPonyGuns</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <BaseIntermediateOutputPath>.mono/temp/obj</BaseIntermediateOutputPath>
+    <IntermediateOutputPath>$(BaseIntermediateOutputPath)/$(Configuration)</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>portable</DebugType>
+    <Optimize>true</Optimize>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Tools|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TOOLS;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GodotSharp">
+      <HintPath>$(ProjectDir)/.mono/assemblies/GodotSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GodotSharpEditor" Condition=" '$(Configuration)' == 'Tools' ">
+      <HintPath>$(ProjectDir)/.mono/assemblies/GodotSharpEditor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scripts\Arenas\Arena.cs" />
+    <Compile Include="Scripts\Controllers\ChestUIController.cs" />
+    <Compile Include="Scripts\Controllers\HealthBarController.cs" />
+    <Compile Include="Scripts\Controllers\InteractiveObjectsUIController.cs" />
+    <Compile Include="Scripts\Controllers\InventoryBasedObject\InventoryBasedObjectUIController.cs" />
+    <Compile Include="Scripts\GUI\ArenaGUI.cs" />
+    <Compile Include="Scripts\GUI\Chest\ChestGUI.cs" />
+    <Compile Include="Scripts\GUI\ContextMenu\ContextMenu.cs" />
+    <Compile Include="Scripts\GUI\ContextMenu\ContextMenuItem.cs" />
+    <Compile Include="Scripts\GUI\CursorController.cs" />
+    <Compile Include="Scripts\GUI\Entity\HealthBar.cs" />
+    <Compile Include="Scripts\GUI\Entity\PortableHealthBar.cs" />
+    <Compile Include="Scripts\GUI\HeaderPanel.cs" />
+    <Compile Include="Scripts\GUI\Inventory\ExchangeInventoryGUI.cs" />
+    <Compile Include="Scripts\GUI\Inventory\InventoryGUI.cs" />
+    <Compile Include="Scripts\GUI\Inventory\InventoryGUISlot.cs" />
+    <Compile Include="Scripts\GUI\Inventory\ItemExchangeGUI.cs" />
+    <Compile Include="Scripts\GUI\Inventory\PinItemExchangeGUI.cs" />
+    <Compile Include="Scripts\GUI\Inventory\UsingSlotsGUI.cs" />
+    <Compile Include="Scripts\GUI\ModalControls\ModalControlLayer.cs" />
+    <Compile Include="Scripts\GUI\ModalControls\ModalControls.cs" />
+    <Compile Include="Scripts\GUI\ObjectPanels\ButtonHint.cs" />
+    <Compile Include="Scripts\GUI\ObjectPanels\ObjectPanels.cs" />
+    <Compile Include="Scripts\GUI\Panel.cs" />
+    <Compile Include="Scripts\GUI\PointerMenu\PointerMenuContainer.cs" />
+    <Compile Include="Scripts\GUI\PointerMenu\PointerMenuCouple.cs" />
+    <Compile Include="Scripts\GUI\PonyLabel.cs" />
+    <Compile Include="Scripts\GUI\ProcessBar.cs" />
+    <Compile Include="Scripts\Objects\Atack\AtackArea.cs" />
+    <Compile Include="Scripts\Objects\Atack\AtackListener.cs" />
+    <Compile Include="Scripts\Objects\Chest\Chest.cs" />
+    <Compile Include="Scripts\Objects\Entity\Actions\EntityAction.cs" />
+    <Compile Include="Scripts\Objects\Entity\AI\BaseMobAI.cs" />
+    <Compile Include="Scripts\Objects\Entity\AI\ImprovedMobAI.cs" />
+    <Compile Include="Scripts\Objects\Entity\AI\MobAI.cs" />
+    <Compile Include="Scripts\Objects\Entity\Entity.cs" />
+    <Compile Include="Scripts\Objects\Entity\EntityUserControl.cs" />
+    <Compile Include="Scripts\Objects\Entity\Eye.cs" />
+    <Compile Include="Scripts\Objects\Entity\Pony\Pony.cs" />
+    <Compile Include="Scripts\Objects\Entity\Pony\Unicorn.cs" />
+    <Compile Include="Scripts\Objects\Entity\ShotUserControl.cs" />
+    <Compile Include="Scripts\Objects\Entity\Slime\Slime.cs" />
+    <Compile Include="Scripts\Objects\InteractiveObject.cs" />
+    <Compile Include="Scripts\Objects\InventoryBasedObject\InventoryBasedObject.cs" />
+    <Compile Include="Scripts\Objects\InventoryBasedObject\VisualInventoryObject.cs" />
+    <Compile Include="Scripts\Objects\Items\AdvancedInventory.cs" />
+    <Compile Include="Scripts\Objects\Items\Guns\Gun.cs" />
+    <Compile Include="Scripts\Objects\Items\Inventory.cs" />
+    <Compile Include="Scripts\Objects\Items\InventorySlot.cs" />
+    <Compile Include="Scripts\Objects\Items\InventorySlotGroup.cs" />
+    <Compile Include="Scripts\Objects\Items\Items.cs" />
+    <Compile Include="Scripts\Objects\PonyCamera.cs" />
+    <Compile Include="Scripts\Objects\RectSized.cs" />
+    <Compile Include="Scripts\Objects\VisualItem\InventoryItemPlace.cs" />
+    <Compile Include="Scripts\Objects\VisualItem\ItemPlace.cs" />
+    <Compile Include="Scripts\Objects\VisualItem\Pony\CornMagicPlace.cs" />
+    <Compile Include="Scripts\Objects\VisualItem\VisualItem.cs" />
+    <Compile Include="Scripts\Objects\VisualItem\Weapon\VisualGuns\VisualGun.cs" />
+    <Compile Include="Scripts\Objects\Weapon\Bullets\Bullet.cs" />
+    <Compile Include="Scripts\PonyList.cs" />
+    <Compile Include="Scripts\PonyLoader.cs" />
+    <Compile Include="Scripts\PonyRandom.cs" />
+    <Compile Include="Scripts\Tests\EntityTests.cs" />
+    <Compile Include="Scripts\Tests\InventoryGUITests.cs" />
+    <Compile Include="Tests\AdvancedInventoryRequestsDebugger.cs" />
+    <Compile Include="Tests\AdvancedInventoryTests.cs" />
+    <Compile Include="Tests\DebugConsole.cs" />
+    <Compile Include="Tests\EntityActionsTests.cs" />
+    <Compile Include="Tests\EntityPosAndTargetTests.cs" />
+    <Compile Include="Tests\ExchangeGUITests.cs" />
+    <Compile Include="Tests\ExportStructTests.cs" />
+    <Compile Include="Tests\InventoryItemPlaceTests.cs" />
+    <Compile Include="Tests\ModalTests2.cs" />
+    <Compile Include="Tests\PointerMenuContainerTests.cs" />
+    <Compile Include="Tests\PonyLabelTests.cs" />
+    <Compile Include="Tests\signalTests.cs" />
+    <Compile Include="Tests\TestArena.cs" />
+    <Compile Include="Tests\TestGun.cs" />
+    <Compile Include="Tests\TestingEntity.cs" />
+    <Compile Include="Tests\TestMenu.cs" />
+    <Compile Include="Tests\TestVisualInventoryObject.cs" />
+    <Compile Include="Tests\VisualTestGun.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
